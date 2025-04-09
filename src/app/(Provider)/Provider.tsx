@@ -13,9 +13,7 @@ interface ProvidersProps {
 export default function Providers({ children }: Readonly<ProvidersProps>) {
   return (
     <AppRouterCacheProvider>
-          <Provider store={store}>
-            {children}
-          </Provider>
+      <Provider store={store}>{children}</Provider>
     </AppRouterCacheProvider>
   );
 }
