@@ -1,14 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import mercudioReducer from './slices/mercurioSlice/mercurioSlice';
-import profilerFormReducer from './slices/profileFormSlice/profilerFormSlice';
-import spinnerReducer from './slices/spinnerSlice/spinnerSlice';
+import smartPayReducer from './slices/smartpaySlice/smartpaySlice';
 
 const store = configureStore({
   reducer: {
-    profilerForm: profilerFormReducer,
-    spinner: spinnerReducer,
-    mercurio: mercudioReducer
+    smartPay: smartPayReducer,
   }
 });
 

@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { RootState } from '@/store/store';
 
+// TODO: Add a comment explaining the purpose of this slice and its reducers
+
 interface SpinnerState {
   isLoading: boolean;
 }
@@ -10,7 +12,7 @@ const initialState: SpinnerState = {
   isLoading: false
 };
 
-const spinnerSlice = createSlice({
+const smartPaySlice = createSlice({
   name: 'spinner',
   initialState,
   reducers: {
@@ -23,6 +25,6 @@ const spinnerSlice = createSlice({
   }
 });
 
-export const { showSpinner, hideSpinner } = spinnerSlice.actions;
-export const selectIsLoading = (state: RootState) => state.spinner.isLoading;
-export default spinnerSlice.reducer;
+export const { showSpinner, hideSpinner } = smartPaySlice.actions;
+export const selectIsLoading = (state: RootState) => state.smartPay.isLoading;
+export default smartPaySlice.reducer;
