@@ -1,0 +1,130 @@
+@use 'variables' as *;
+
+@mixin from($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin until($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin scrollBar(
+  $color: #b2b2b2,
+  $width: 4px,
+  $radius: 20px,
+  $track-color: transparent,
+  $track-radius: 0,
+  $thumb: none,
+  $height: inherit
+) {
+  scrollbar-color: $color $track-color;
+  scrollbar-width: thin;
+
+  ::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: $track-radius;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $thumb;
+    background-color: $color;
+    border-radius: $radius;
+  }
+
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//* Pixels to rem
+@function size($target, $context: $base-font-size) {
+  @return calc($target / $context) * 1rem;
+}
+
+//* Typography
+
+@mixin h2 {
+  font-size: size(31, $base-font-size);
+  font-weight: 700;
+  line-height: size(34, $base-font-size);
+}
+
+@mixin h3 {
+  font-size: size(27, $base-font-size);
+  font-weight: 700;
+  line-height: size(29, $base-font-size);
+}
+
+@mixin h4 {
+  font-size: size(23);
+  font-weight: 700;
+  line-height: size(25, $base-font-size);
+}
+
+@mixin h5 {
+  font-size: size(19, $base-font-size);
+  font-weight: 700;
+  line-height: size(20, $base-font-size);
+}
+
+@mixin h6 {
+  font-size: size(17, $base-font-size);
+  font-weight: 700;
+  line-height: size(18, $base-font-size);
+}
+
+@mixin Body1 {
+  font-size: size(16, $base-font-size);
+  font-weight: 400;
+  line-height: size(20, $base-font-size);
+}
+
+@mixin Body2 {
+  font-size: size(14, $base-font-size);
+  font-weight: 400;
+  line-height: size(19, $base-font-size);
+}
+
+@mixin Body3 {
+  font-size: size(11, $base-font-size);
+  font-weight: 400;
+  line-height: size(16, $base-font-size);
+}
+
+@mixin action1 {
+  font-size: size(16, $base-font-size);
+  font-weight: 400;
+  line-height: size(24, $base-font-size);
+}
+
+@mixin action2 {
+  font-size: size(13, $base-font-size);
+  font-weight: 400;
+  line-height: size(20, $base-font-size);
+}
